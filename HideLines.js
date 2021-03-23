@@ -1,8 +1,3 @@
-/* 
-   Can't use an iterator as when we modify any of its nodes, the iterator becomes invalid.
-   So we get a SNAPSHOT.  This returns an object that has a snapshotLength field and we can access
-   the nodes with the snapshotItem().
-*/
 function hideLines()
 {
     var z = document.evaluate("//*[name() = 'g' and namespace-uri() = 'http://www.w3.org/2000/svg' and (@class = 'points' or @class = 'lines')]", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE);
@@ -21,20 +16,3 @@ function hideLines()
 
 }
 
-
-
-
-
-
-
-
-
-/*    
-    while( (g = z.iterateNext() )) {
-	console.log('hiding ' + g) ;
-	g.visibility = "hidden";
-	g.display = "none";
-	g.setAttribute("visiblility", "hidden");
-	g.setAttribute("display", "none");	
-    }
-*/
